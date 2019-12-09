@@ -8,10 +8,10 @@ export default class ExaplePage extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-		const { clientId, clientSecret, scope, domain } = initialConfig;    
+		const { consumerKey, consumerSecret, scope, domain } = initialConfig;    
     this.state = {
-      clientId,
-      clientSecret,
+      consumerKey,
+      consumerSecret,
       redirectUri: window.location.href,
 			scope,
 			domain,
@@ -39,7 +39,7 @@ export default class ExaplePage extends React.Component {
   };
 
   render() {
-    const { clientId, clientSecret, scope, buttonTheme, debug, domain, customClassName, redirectUri } = this.state;
+    const { consumerKey, consumerSecret, scope, buttonTheme, debug, domain, customClassName, redirectUri } = this.state;
     return (
       <div className="viewport">
         <Segment basic>
@@ -60,22 +60,22 @@ export default class ExaplePage extends React.Component {
             <Segment>
               <Form>
                 <Form.Field>
-                  <label>Client ID</label>
+                  <label>Consumer Key</label>
                   <input
-                    onChange={e => this.handleChange(e.target.value, "clientId")}
-                    placeholder={initialConfig.clientId}
-                    value={clientId}
+                    onChange={e => this.handleChange(e.target.value, "consumerKey")}
+                    placeholder={initialConfig.consumerKey}
+                    value={consumerKey}
                   />
                 </Form.Field>
                 <Form.Field>
-                  <label>Client Secret</label>
+                  <label>Consumer Secret</label>
                   <input
-                    onChange={e => this.handleChange(e.target.value, "clientSecret")}
-                    placeholder={initialConfig.clientSecret}
-                    value={clientSecret}
+                    onChange={e => this.handleChange(e.target.value, "consumerSecret")}
+                    placeholder={initialConfig.consumerSecret}
+                    value={consumerSecret}
                   />
                 </Form.Field>
-                <Form.Field>
+                {/* <Form.Field>
                   <label>Redirect URI</label>
                   <input
                     onChange={e => this.handleChange(e.target.value, "redirectUri")}
@@ -123,7 +123,7 @@ export default class ExaplePage extends React.Component {
                   <code>
                     {`(err, data) => console.log(err, data)`}
                   </code>
-                </Form.Field>
+                </Form.Field> */}
                 {/* <Form.Field>
                   <Radio
                     onChange={(e, data) => this.handleChange(data.checked, "debug")}
@@ -137,8 +137,8 @@ export default class ExaplePage extends React.Component {
             <Segment>
               <TwitterLogin
                 // debug={debug}
-                clientId={clientId}
-                clientSecret={clientSecret}
+                consumerKey={consumerKey}
+                consumerSecret={consumerSecret}
                 domain={domain}
                 authCallback={this.loginHandler}
                 buttonTheme={buttonTheme}

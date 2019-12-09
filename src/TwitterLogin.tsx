@@ -57,7 +57,7 @@ export default class TwitterLoginComponent extends React.Component<
   buildCodeRequestURL = () => {
     const { clientId, redirectUri, scope, domain } = this.props;
     const uri = encodeURIComponent(redirectUri || window.location.href);
-    return ``;
+    return `https://api.twitter.com/oauth2/token`;
   };
 
   sendTokenRequest = (code: string) => {

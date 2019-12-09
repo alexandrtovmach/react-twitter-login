@@ -1,6 +1,6 @@
 export default {
-  clientId: "rC4NvIV3Q8xotvxlEcUJ",
-  clientSecret: "0I1pqXeyfDVy4qyNnIhpTg4G3IoUnIdY3iANsx6k",
+  consumerKey: "xvz1evFS4wEEPTGEFPHBog",
+  consumerSecret: "L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg",
 	scope: 'tm',
 	domain: 'alexandrtovmach',
   themeOptions: [
