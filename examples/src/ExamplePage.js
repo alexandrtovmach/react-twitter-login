@@ -82,23 +82,23 @@ export default class ExaplePage extends React.Component {
                     placeholder='https://example.com'
                     value={redirectUri}
                   />
-                </Form.Field>
-                <Form.Field>
+                </Form.Field> */}
+                {/* <Form.Field>
                   <label>Domain</label>
                   <input
                     onChange={e => this.handleChange(e.target.value, "domain")}
                     placeholder='alexandrtovmach'
                     value={domain}
                   />
-                </Form.Field>
-                <Form.Field>
+                </Form.Field> */}
+                {/* <Form.Field>
                   <label>Scope</label>
                   <input
                     onChange={e => this.handleChange(e.target.value, "scope")}
                     placeholder='tm'
                     value={scope}
                   />
-                </Form.Field>
+                </Form.Field> */}
                 <Form.Field>
                   <label>Button theme</label>
                   <Select
@@ -123,7 +123,7 @@ export default class ExaplePage extends React.Component {
                   <code>
                     {`(err, data) => console.log(err, data)`}
                   </code>
-                </Form.Field> */}
+                </Form.Field>
                 {/* <Form.Field>
                   <Radio
                     onChange={(e, data) => this.handleChange(data.checked, "debug")}

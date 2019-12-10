@@ -1,6 +1,6 @@
 export default {
-  consumerKey: "xvz1evFS4wEEPTGEFPHBog",
-  consumerSecret: "L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg",
+  consumerKey: "PyHxgJuyORZqhDiuKAne8LcxT",
+  consumerSecret: "RBqOgWJfflgk2GLGmKtHFnHituqvf3vROPfAqzOPpfKficIrI9",
 	scope: 'tm',
 	domain: 'alexandrtovmach',
   themeOptions: [
