@@ -1,4 +1,4 @@
-# React Twitter Login
+# react-twitter-login
 
 [![npm](https://img.shields.io/npm/v/react-twitter-login?logo=npm&cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
 [![npm](https://img.shields.io/npm/dt/react-twitter-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
@@ -9,7 +9,7 @@ React component for a simple OAuth login with Twitter.
 
 [DEMO HERE](https://alexandrtovmach.github.io/react-twitter-login/)
 
-### 🚀 Get Started
+## 🚀 Get Started
 
 Follow these steps to start using React Twitter Login:
 
@@ -49,7 +49,7 @@ Follow these steps to start using React Twitter Login:
 
 3. Find more info about keys and OAuth apps in official docs.
 
-### 📖 API
+## 📖 API
 
 | Property     | Type                                                       | Default   | Description                                                     |
 | ------------ | ---------------------------------------------------------- | --------- | --------------------------------------------------------------- |
@@ -62,6 +62,6 @@ Follow these steps to start using React Twitter Login:
 | buttonTheme  | enum: `"light"`, `"light_short"`, `"dark"`, `"dark_short"` | `"light"` | Button style theme, that based on Login Branding Guidelines     |
 | className    | string                                                     | `""`      | Custom class name                                               |
 
-### 📝 License
+## 📝 License
 
 [MIT](https://github.com/alexandrtovmach/react-twitter-login/blob/master/LICENSE)
