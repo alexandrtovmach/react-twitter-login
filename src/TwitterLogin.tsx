@@ -3,6 +3,7 @@ import * as React from "react";
 import { TwitterLoginProps, TwitterLoginState } from "../";
 import TwitterLoginButton from "./TwitterLoginButton";
 import { openWindow, observeWindow } from "./services/window";
+import { makeSignature } from "./services/signature";
 
 export default class TwitterLoginComponent extends React.Component<
   TwitterLoginProps,
@@ -54,51 +55,58 @@ export default class TwitterLoginComponent extends React.Component<
     }
   };
 
-  buildCodeRequestURL = () => {
-    const { clientId, redirectUri, scope, domain } = this.props;
-    const uri = encodeURIComponent(redirectUri || window.location.href);
-    return `https://api.twitter.com/oauth2/token`;
-  };
-
   sendTokenRequest = (code: string) => {
-    const {
-      clientId: client_id,
-      clientSecret: client_secret,
-      redirectUri,
-      domain
-    } = this.props;
-    const redirect_uri = redirectUri || window.location.href;
-    return fetch(
-      `https://cors-anywhere.herokuapp.com/`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          client_id,
-          client_secret,
-          redirect_uri,
-          grant_type: "authorization_code",
-          domain,
-          code
-        })
-      }
-    );
+    const { consumerKey, consumerSecret } = this.props;
+    const token = `${consumerKey}:${consumerSecret}`;
+    const base64Token = btoa(token);
+    return fetch("https://api.twitter.com/oauth/request_token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "oauth_callback",
+        Authorization: `Basic ${base64Token}`
+      },
+      body: "grant_type=client_credentials"
+    });
   };
 
-  handleLoginClick = () => {
-    const popup = openWindow({
-      url: this.buildCodeRequestURL(),
-      name: "Log in with Twitter"
+  handleLoginClick = async () => {
+    const {
+      consumerKey,
+      consumerSecret,
+      accessToken,
+      accessTokenSecret,
+      redirectUri
+    } = this.props;
+    const apiUrl = "https://api.twitter.com/oauth/request_token";
+    const uri = encodeURIComponent(redirectUri || window.location.href);
+    const oauthSignature = makeSignature({
+      method: "POST",
+      url: apiUrl,
+      accessToken,
+      accessTokenSecret,
+      consumerKey,
+      consumerSecret
     });
+    fetch(`https://cors-anywhere.herokuapp.com/${apiUrl}`, {
+      method: "POST",
+      headers: {
+        Authorization: `OAuth ${oauthSignature}`
+      }
+    })
+      .then(res => res.text())
+      .then(console.log)
+      .catch(console.error);
+    // const popup = openWindow({
+    //   url: "https://api.twitter.com/oauth2/token",
+    //   name: "Log in with Twitter"
+    // });
 
-    if (popup) {
-      observeWindow({ popup, onClose: this.handleClosingPopup });
-      this.setState({
-        popup
-      });
-    }
+    // if (popup) {
+    //   observeWindow({ popup, onClose: this.handleClosingPopup });
+    //   this.setState({
+    //     popup
+    //   });
+    // }
   };
 
   handleClosingPopup = () => {

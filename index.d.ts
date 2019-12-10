@@ -4,14 +4,24 @@ type TwitterLoginButtonTheme = "dark_short" | "light_short" | "dark" | "light";
 
 interface TwitterLoginProps {
   /**
-   * Application (client) ID
+   * Consumer API key
    */
-  clientId: string;
+  consumerKey: string;
 
   /**
-   * Application (client) ID
+   * Consumer API secret key
    */
-  clientSecret: string;
+  consumerSecret: string;
+
+/**
+   * Access key
+   */
+  accessToken: string;
+
+  /**
+   * Access secret key
+   */
+  accessTokenSecret: string;
 
   /**
    * Callback function which takes two arguments (error, authData)

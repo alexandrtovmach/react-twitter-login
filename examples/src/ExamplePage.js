@@ -8,10 +8,12 @@ export default class ExaplePage extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-		const { consumerKey, consumerSecret, scope, domain } = initialConfig;    
+		const { consumerKey, consumerSecret, accessToken, accessTokenSecret, scope, domain } = initialConfig;    
     this.state = {
       consumerKey,
       consumerSecret,
+      accessToken,
+      accessTokenSecret,
       redirectUri: window.location.href,
 			scope,
 			domain,
@@ -39,7 +41,7 @@ export default class ExaplePage extends React.Component {
   };
 
   render() {
-    const { consumerKey, consumerSecret, scope, buttonTheme, debug, domain, customClassName, redirectUri } = this.state;
+    const { consumerKey, consumerSecret, scope, buttonTheme, accessToken, accessTokenSecret, domain, customClassName, redirectUri } = this.state;
     return (
       <div className="viewport">
         <Segment basic>
@@ -75,14 +77,30 @@ export default class ExaplePage extends React.Component {
                     value={consumerSecret}
                   />
                 </Form.Field>
-                {/* <Form.Field>
+                <Form.Field>
+                  <label>Accesss Token</label>
+                  <input
+                    onChange={e => this.handleChange(e.target.value, "accessToken")}
+                    placeholder={initialConfig.accessToken}
+                    value={accessToken}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Accesss Token Secret</label>
+                  <input
+                    onChange={e => this.handleChange(e.target.value, "accessTokenSecret")}
+                    placeholder={initialConfig.accessTokenSecret}
+                    value={accessTokenSecret}
+                  />
+                </Form.Field>
+                <Form.Field>
                   <label>Redirect URI</label>
                   <input
                     onChange={e => this.handleChange(e.target.value, "redirectUri")}
                     placeholder='https://example.com'
                     value={redirectUri}
                   />
-                </Form.Field> */}
+                </Form.Field>
                 {/* <Form.Field>
                   <label>Domain</label>
                   <input
@@ -139,6 +157,8 @@ export default class ExaplePage extends React.Component {
                 // debug={debug}
                 consumerKey={consumerKey}
                 consumerSecret={consumerSecret}
+                accessToken={accessToken}
+                accessTokenSecret={accessTokenSecret}
                 domain={domain}
                 authCallback={this.loginHandler}
                 buttonTheme={buttonTheme}

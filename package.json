@@ -4,10 +4,10 @@
   "main": "dist/index.js",
   "version": "1.1.1",
   "author": {
-		"name": "Alexandr Tovmach",
-		"url": "https://alexandrtovmach.com/",
-		"email": "alexandrtovmach@gmail.com"
-	},
+    "name": "Alexandr Tovmach",
+    "url": "https://alexandrtovmach.com/",
+    "email": "alexandrtovmach@gmail.com"
+  },
   "private": false,
   "scripts": {
     "watch": "tsc --watch",
@@ -72,7 +72,11 @@
     "url": "https://github.com/alexandrtovmach/react-twitter-login/issues"
   },
   "homepage": "https://alexandrtovmach.github.io/react-twitter-login",
-	"repository": {
-		"url": "https://github.com/alexandrtovmach/react-twitter-login"
-	}
+  "repository": {
+    "url": "https://github.com/alexandrtovmach/react-twitter-login"
+  },
+  "dependencies": {
+    "@types/crypto-js": "^3.1.43",
+    "crypto-js": "^3.1.9-1"
+  }
 }
