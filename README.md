@@ -1,14 +1,14 @@
 # react-twitter-login
 
-[![npm](https://img.shields.io/npm/v/react-twitter-login?logo=npm&cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
+<!-- [![npm](https://img.shields.io/npm/v/react-twitter-login?logo=npm&cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-twitter-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
-[![npm](https://img.shields.io/npm/dt/react-twitter-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
+[![npm](https://img.shields.io/npm/dt/react-twitter-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login) -->
 
 React component for a simple OAuth login with Twitter.
 
 [DEMO HERE](https://alexandrtovmach.github.io/react-twitter-login/)
 
-## 🚀 Get Started
+<!-- ## 🚀 Get Started
 
 Follow these steps to start using React Twitter Login:
 
@@ -46,7 +46,7 @@ Follow these steps to start using React Twitter Login:
    };
    ```
 
-3. Find more info about keys and OAuth apps in official docs.
+3. Find more info about keys and OAuth apps in official docs. -->
 
 ## 📖 API
 
