@@ -3,7 +3,11 @@
   "description": "React component for simple OAuth with Twitter",
   "main": "dist/index.js",
   "version": "1.1.1",
-  "author": "alexandrtovmach@gmail.com",
+  "author": {
+		"name": "Alexandr Tovmach",
+		"url": "https://alexandrtovmach.com/",
+		"email": "alexandrtovmach@gmail.com"
+	},
   "private": false,
   "scripts": {
     "watch": "tsc --watch",
@@ -67,5 +71,8 @@
   "bugs": {
     "url": "https://github.com/alexandrtovmach/react-twitter-login/issues"
   },
-  "homepage": "https://alexandrtovmach.github.io/react-twitter-login"
+  "homepage": "https://alexandrtovmach.github.io/react-twitter-login",
+	"repository": {
+		"url": "https://github.com/alexandrtovmach/react-twitter-login"
+	}
 }
