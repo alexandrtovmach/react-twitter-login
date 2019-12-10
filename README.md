@@ -9,10 +9,6 @@ React component for a simple OAuth login with Twitter.
 
 [DEMO HERE](https://alexandrtovmach.github.io/react-twitter-login/)
 
-![light border lowerc short](https://raw.github.com/alexandrtovmach/react-twitter-login/master/images/light_border_lowerc_short.svg?sanitize=true)
-![light border lowerc](https://raw.github.com/alexandrtovmach/react-twitter-login/master/images/light_border_lowerc.svg?sanitize=true)
-![dark border lowerc short](https://raw.github.com/alexandrtovmach/react-twitter-login/master/images/dark_border_lowerc_short.svg?sanitize=true)
-![dark border lowerc](https://raw.github.com/alexandrtovmach/react-twitter-login/master/images/dark_border_lowerc.svg?sanitize=true)
 
 ### Get Started
 
@@ -67,35 +63,6 @@ export default props => {
 | buttonTheme  | enum: `"light"`, `"light_short"`, `"dark"`, `"dark_short"` | `"light"` | Button style theme, that based on Login Branding Guidelines     |
 | className    | string                                                     | `""`      | Custom class name                                               |
 
-### Contribution
-
-We are happy to accept contributions to the React Twitter Login. To contribute please do the following:
-
-1. Fork the repository on GitHub.
-2. Decide which code you want to submit. Commit your changes and push to the new branch.
-3. Ensure that your code adheres to standard conventions, as used in the rest of the library.
-4. Submit a pull request with your patch on Github.
-
-### Seeking Assistance
-
-If you find any problems or would like to suggest a feature, please feel free to file an issue on Github at [Issues Page](https://github.com/alexandrtovmach/react-twitter-login/issues).
-
-Need help working with React Twitter Login or have any questions?
-
-### Author
-
-- Alexandr Tovmach (alexandrtovmach@gmail.com)
-
 ### License
 
-<pre>
-Copyright © 2019 Twitter
-
-The React Twitter Login is licensed under the MIT License.
-See the LICENSE file distributed with this work for additional
-information regarding copyright ownership.
-
-Except as contained in the LICENSE file, the name(s) of the above copyright
-holders shall not be used in advertising or otherwise to promote the sale,
-use or other dealings in this Software without prior written authorization.
-</pre>
+https://github.com/alexandrtovmach/license/blob/master/LICENSE
