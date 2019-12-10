@@ -1,9 +1,8 @@
 # react-twitter-login
 
 [![npm](https://img.shields.io/npm/v/react-twitter-login?logo=npm&cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
-[![npm](https://img.shields.io/npm/dt/react-twitter-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-twitter-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
-[![GitHub issues](https://img.shields.io/github/issues/alexandrtovmach/react-twitter-login?cacheSeconds=1800)](https://github.com/alexandrtovmach/react-twitter-login/issues)
+[![npm](https://img.shields.io/npm/dt/react-twitter-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
 
 React component for a simple OAuth login with Twitter.
 
