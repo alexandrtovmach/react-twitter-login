@@ -3,10 +3,7 @@ import { HmacSHA1, enc } from "crypto-js";
 export const makeSignature = ({
   method,
   url,
-  accessToken,
-  consumerKey,
-  consumerSecret,
-  accessTokenSecret
+  consumerKey
 }: {
   method: string;
   url: string;
@@ -17,7 +14,6 @@ export const makeSignature = ({
 }) => {
   const params = {
     oauth_consumer_key: consumerKey,
-    oauth_token: accessToken,
     oauth_version: "1.0",
     oauth_signature_method: "HMAC-SHA1",
     oauth_timestamp: (Date.now() / 1000).toFixed(),
@@ -37,9 +33,7 @@ export const makeSignature = ({
   const signatureBaseString = `${method.toUpperCase()}&${encodeURIComponent(
     url
   )}&${encodeURIComponent(paramsBaseString)}`;
-  const signingKey = encodeURIComponent(
-    `${consumerSecret}&${accessTokenSecret}`
-  );
+  const signingKey = encodeURIComponent("&");
 
   const oauth_signature = enc.Base64.stringify(
     HmacSHA1(signatureBaseString, signingKey)

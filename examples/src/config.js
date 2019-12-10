@@ -1,8 +1,6 @@
 export default {
   consumerKey: "PyHxgJuyORZqhDiuKAne8LcxT",
   consumerSecret: "RBqOgWJfflgk2GLGmKtHFnHituqvf3vROPfAqzOPpfKficIrI9",
-  accessToken: "1046347250056785921-N7iz4f343DD6BZiqu6Psd1zXNWRWJe",
-  accessTokenSecret: "5Mk5KUTvqkxdF8WhZQUl7w4UMicxyLOOAIfLVZIyDmYfm",
 	scope: 'tm',
 	domain: 'alexandrtovmach',
   themeOptions: [

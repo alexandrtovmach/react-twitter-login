@@ -13,16 +13,6 @@ interface TwitterLoginProps {
    */
   consumerSecret: string;
 
-/**
-   * Access key
-   */
-  accessToken: string;
-
-  /**
-   * Access secret key
-   */
-  accessTokenSecret: string;
-
   /**
    * Callback function which takes two arguments (error, authData)
    */
