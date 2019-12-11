@@ -1,8 +1,7 @@
 export default {
   consumerKey: "PyHxgJuyORZqhDiuKAne8LcxT",
   consumerSecret: "RBqOgWJfflgk2GLGmKtHFnHituqvf3vROPfAqzOPpfKficIrI9",
-	scope: 'tm',
-	domain: 'alexandrtovmach',
+  customClassName: "my-custom-class",
   themeOptions: [
     {
       key: 'dark',
