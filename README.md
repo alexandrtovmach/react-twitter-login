@@ -40,9 +40,7 @@ Follow these steps to start using React Twitter Login:
          authCallback={authHandler}
          consumerKey={CONSUMER_KEY}
          consumerSecret={CONSUMER_SECRET}
-         domain={ORG_DOMAIN}
          callbackUrl={CALLBACK_URL}
-         scope={SCOPE}
        />
      );
    };
