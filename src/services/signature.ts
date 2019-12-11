@@ -3,14 +3,13 @@ import { HmacSHA1, enc } from "crypto-js";
 export const makeSignature = ({
   method,
   url,
-  consumerKey
+  consumerKey,
+  consumerSecret
 }: {
   method: string;
   url: string;
-  accessToken: string;
   consumerKey: string;
   consumerSecret: string;
-  accessTokenSecret: string;
 }) => {
   const params = {
     oauth_consumer_key: consumerKey,
@@ -26,21 +25,29 @@ export const makeSignature = ({
   const paramsBaseString = Object.keys(params)
     .sort()
     .reduce((prev: string, el: keyof typeof params) => {
-      return (prev += `&${el}="${params[el]}"`);
+      return (prev += `&${el}=${params[el]}`);
     }, "")
     .substr(1);
 
   const signatureBaseString = `${method.toUpperCase()}&${encodeURIComponent(
     url
   )}&${encodeURIComponent(paramsBaseString)}`;
-  const signingKey = encodeURIComponent("&");
+
+  const signingKey = `${encodeURIComponent(consumerSecret)}&`;
 
   const oauth_signature = enc.Base64.stringify(
     HmacSHA1(signatureBaseString, signingKey)
   );
 
-  return `${paramsBaseString.replace(
-    /&/g,
-    ","
-  )},oauth_signature="${encodeURIComponent(oauth_signature)}"`;
+  const paramsWithSignature = {
+    ...params,
+    oauth_signature: encodeURIComponent(oauth_signature)
+  };
+
+  return Object.keys(paramsWithSignature)
+    .sort()
+    .reduce((prev: string, el: keyof typeof params) => {
+      return (prev += `,${el}="${paramsWithSignature[el]}"`);
+    }, "")
+    .substr(1);
 };
