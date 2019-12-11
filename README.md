@@ -48,7 +48,7 @@ Follow these steps to start using React Twitter Login:
    };
    ```
 
-3. Find more info about keys and [Twitter developer apps](https://developer.twitter.com/en/docs/basics/apps/overview) in official docs.
+3. Find more info about keys and Twitter developer apps in [official docs](https://developer.twitter.com/en/docs/basics/apps/overview).
 
 ## 📖 API
 
@@ -57,7 +57,7 @@ Follow these steps to start using React Twitter Login:
 | authCallback   | function                                                   | required  | Callback function which takes two arguments `(error, authData)`                                                         |
 | consumerKey    | string                                                     | required  | Consumer API Key of your Twitter developer app (not Access Token)                                                       |
 | consumerSecret | string                                                     | required  | Consumer API Secret of your Twitter developer app (not Access Token Secret)                                             |
-| callbackUrl    | string                                                     | required  | Whitelisted [callback URL](https://developer.twitter.com/en/docs/basics/apps/guides/callback-urls)) of your Twitter app |
+| callbackUrl    | string                                                     | required  | Whitelisted [callback URL](https://developer.twitter.com/en/docs/basics/apps/guides/callback-urls) of your Twitter app |
 | buttonTheme    | enum(`"light"`, `"light_short"`, `"dark"`, `"dark_short"`) | `"light"` | Button style theme, that based on [Twitter Brand Design](https://about.twitter.com/en_us/company/brand-resources.html)  |
 | className      | string                                                     | `""`      | Custom class name                                                                                                       |
 
