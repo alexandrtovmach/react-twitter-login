@@ -19,16 +19,6 @@ interface TwitterLoginProps {
   authCallback: (error?: any, result?: any) => void;
 
   /**
-   * Select the access your app requires from the list of scopes available
-   */
-  scope: string;
-
-  /**
-   * Organization domain name
-   */
-  domain: string;
-
-  /**
    * The redirect URI of the application, this should be same as the value in the application registration portal.
    */
   callbackUrl: string;
@@ -38,10 +28,10 @@ interface TwitterLoginProps {
    */
   buttonTheme?: TwitterLoginButtonTheme;
 
-  /**
-   * Enable detailed logs of authorization process.
-   */
-  debug?: boolean;
+  // /**
+  //  * Enable detailed logs of authorization process.
+  //  */
+  // debug?: boolean;
 
   /**
    * Additional class name string.

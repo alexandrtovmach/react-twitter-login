@@ -70,19 +70,19 @@ export default class TwitterLoginComponent extends React.Component<
   handleLoginClick = async () => {
     const { consumerKey, consumerSecret, callbackUrl } = this.props;
     const url = callbackUrl || window.location.href;
-    const {
-      oauth_callback_confirmed,
-      oauth_token
-    } = await obtainOauthRequestToken({
+    const obtainRequestTokenConfig = {
       apiUrl: "https://api.twitter.com/oauth/request_token",
       callbackUrl: url,
       consumerKey,
       consumerSecret,
       method: "POST"
-    });
-    if (oauth_callback_confirmed === "true") {
+    };
+    const requestTokenData = await obtainOauthRequestToken(
+      obtainRequestTokenConfig
+    );
+    if (requestTokenData.oauth_callback_confirmed === "true") {
       const popup = openWindow({
-        url: `https://api.twitter.com/oauth/authorize?oauth_token=${oauth_token}`,
+        url: `https://api.twitter.com/oauth/authorize?oauth_token=${requestTokenData.oauth_token}`,
         name: "Log in with Twitter"
       });
 
