@@ -1,14 +1,16 @@
 # react-twitter-login
 
-<!-- [![npm](https://img.shields.io/npm/v/react-twitter-login?logo=npm&cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
+[![npm](https://img.shields.io/npm/v/react-twitter-login?logo=npm&cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-twitter-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
-[![npm](https://img.shields.io/npm/dt/react-twitter-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login) -->
+[![npm](https://img.shields.io/npm/dt/react-twitter-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
 
 React component for a simple OAuth login with Twitter.
 
 [DEMO HERE](https://alexandrtovmach.github.io/react-twitter-login/)
 
-<!-- ## 🚀 Get Started
+![image](https://user-images.githubusercontent.com/28801003/70518342-dc895280-1b42-11ea-905a-eed1bdf63694.png)
+
+## 🚀 Get Started
 
 Follow these steps to start using React Twitter Login:
 
@@ -36,30 +38,28 @@ Follow these steps to start using React Twitter Login:
      return (
        <TwitterLogin
          authCallback={authHandler}
-         clientId={CLIENT_ID}
-         clientSecret={CLIENT_SECRET}
+         consumerKey={CONSUMER_KEY}
+         consumerSecret={CONSUMER_SECRET}
          domain={ORG_DOMAIN}
-         redirectUri={REDIRECT_URI}
+         callbackUrl={CALLBACK_URL}
          scope={SCOPE}
        />
      );
    };
    ```
 
-3. Find more info about keys and OAuth apps in official docs. -->
+3. Find more info about keys and [Twitter developer apps](https://developer.twitter.com/en/docs/basics/apps/overview) in official docs.
 
 ## 📖 API
 
-| Property     | Type                                                       | Default   | Description                                                     |
-| ------------ | ---------------------------------------------------------- | --------- | --------------------------------------------------------------- |
-| authCallback | function                                                   | required  | Callback function which takes two arguments `(error, authData)` |
-| clientId     | string                                                     | required  | Client ID of your OAuth App                                     |
-| clientSecret | string                                                     | required  | Client Secret of your OAuth App                                 |
-| domain       | string                                                     | required  | Domain of your Twitter organization                             |
-| redirectUri  | string                                                     | required  | Authorization callback URL of your OAuth App                    |
-| scope        | string                                                     | required  | Scope that will be requested.                                   |
-| buttonTheme  | enum: `"light"`, `"light_short"`, `"dark"`, `"dark_short"` | `"light"` | Button style theme, that based on Login Branding Guidelines     |
-| className    | string                                                     | `""`      | Custom class name                                               |
+| Property       | Type                                                       | Default   | Description                                                                                                             |
+| -------------- | ---------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------- |
+| authCallback   | function                                                   | required  | Callback function which takes two arguments `(error, authData)`                                                         |
+| consumerKey    | string                                                     | required  | Consumer API Key of your Twitter developer app (not Access Token)                                                       |
+| consumerSecret | string                                                     | required  | Consumer API Secret of your Twitter developer app (not Access Token Secret)                                             |
+| callbackUrl    | string                                                     | required  | Whitelisted [callback URL](https://developer.twitter.com/en/docs/basics/apps/guides/callback-urls)) of your Twitter app |
+| buttonTheme    | enum(`"light"`, `"light_short"`, `"dark"`, `"dark_short"`) | `"light"` | Button style theme, that based on [Twitter Brand Design](https://about.twitter.com/en_us/company/brand-resources.html)  |
+| className      | string                                                     | `""`      | Custom class name                                                                                                       |
 
 ## 📝 License
 

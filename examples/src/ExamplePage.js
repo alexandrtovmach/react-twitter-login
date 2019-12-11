@@ -1,26 +1,20 @@
 import React from 'react';
-import { Container, Header, Label, Icon, Segment, Select, Radio, Form } from 'semantic-ui-react';
+import { Container, Header, Label, Icon, Segment, Select, Form } from 'semantic-ui-react';
 
-import initialConfig from "./config";
+import config from "./config";
 import TwitterLogin from "../../dist";
 
 export default class ExaplePage extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-		const { consumerKey, consumerSecret, scope, domain } = initialConfig;    
+		const { consumerKey, consumerSecret, themeOptions } = config;    
     this.state = {
       consumerKey,
       consumerSecret,
-      redirectUri: window.location.href,
-			scope,
-			domain,
-			customClassName: "my-custom-class",
-      buttonTheme: "dark",
-      withUserData: true,
-      customButton: false,
-      forceRedirectStrategy: false,
-      debug: true
+      callbackUrl: config.callbackUrl || window.location.href,
+			customClassName: config.customClassName,
+      buttonTheme: themeOptions[0].value
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -39,7 +33,7 @@ export default class ExaplePage extends React.Component {
   };
 
   render() {
-    const { consumerKey, consumerSecret, scope, buttonTheme, debug, domain, customClassName, redirectUri } = this.state;
+    const { consumerKey, consumerSecret, buttonTheme, customClassName, callbackUrl } = this.state;
     return (
       <div className="viewport">
         <Segment basic>
@@ -63,7 +57,7 @@ export default class ExaplePage extends React.Component {
                   <label>Consumer Key</label>
                   <input
                     onChange={e => this.handleChange(e.target.value, "consumerKey")}
-                    placeholder={initialConfig.consumerKey}
+                    placeholder={config.consumerKey}
                     value={consumerKey}
                   />
                 </Form.Field>
@@ -71,32 +65,16 @@ export default class ExaplePage extends React.Component {
                   <label>Consumer Secret</label>
                   <input
                     onChange={e => this.handleChange(e.target.value, "consumerSecret")}
-                    placeholder={initialConfig.consumerSecret}
+                    placeholder={config.consumerSecret}
                     value={consumerSecret}
                   />
                 </Form.Field>
-                {/* <Form.Field>
+                <Form.Field>
                   <label>Redirect URI</label>
                   <input
-                    onChange={e => this.handleChange(e.target.value, "redirectUri")}
+                    onChange={e => this.handleChange(e.target.value, "callbackUrl")}
                     placeholder='https://example.com'
-                    value={redirectUri}
-                  />
-                </Form.Field>
-                <Form.Field>
-                  <label>Domain</label>
-                  <input
-                    onChange={e => this.handleChange(e.target.value, "domain")}
-                    placeholder='alexandrtovmach'
-                    value={domain}
-                  />
-                </Form.Field>
-                <Form.Field>
-                  <label>Scope</label>
-                  <input
-                    onChange={e => this.handleChange(e.target.value, "scope")}
-                    placeholder='tm'
-                    value={scope}
+                    value={callbackUrl}
                   />
                 </Form.Field>
                 <Form.Field>
@@ -106,7 +84,7 @@ export default class ExaplePage extends React.Component {
                     labeled
                     label="Button theme"
                     placeholder='Select your country'
-                    options={initialConfig.themeOptions}
+                    options={config.themeOptions}
                     defaultValue={buttonTheme}
                   />
                 </Form.Field>
@@ -123,7 +101,7 @@ export default class ExaplePage extends React.Component {
                   <code>
                     {`(err, data) => console.log(err, data)`}
                   </code>
-                </Form.Field> */}
+                </Form.Field>
                 {/* <Form.Field>
                   <Radio
                     onChange={(e, data) => this.handleChange(data.checked, "debug")}
@@ -139,12 +117,10 @@ export default class ExaplePage extends React.Component {
                 // debug={debug}
                 consumerKey={consumerKey}
                 consumerSecret={consumerSecret}
-                domain={domain}
                 authCallback={this.loginHandler}
                 buttonTheme={buttonTheme}
                 className={customClassName}
-                redirectUri={redirectUri}
-                scope={scope}
+                callbackUrl={callbackUrl}
 							/>
             </Segment>
           </Container>
