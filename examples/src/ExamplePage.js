@@ -12,7 +12,7 @@ export default class ExaplePage extends React.Component {
     this.state = {
       consumerKey,
       consumerSecret,
-      redirectUri: window.location.href,
+      callbackUrl: window.location.href,
 			scope,
 			domain,
 			customClassName: "my-custom-class",
@@ -39,7 +39,7 @@ export default class ExaplePage extends React.Component {
   };
 
   render() {
-    const { consumerKey, consumerSecret, scope, buttonTheme, domain, customClassName, redirectUri } = this.state;
+    const { consumerKey, consumerSecret, scope, buttonTheme, domain, customClassName, callbackUrl } = this.state;
     return (
       <div className="viewport">
         <Segment basic>
@@ -78,9 +78,9 @@ export default class ExaplePage extends React.Component {
                 <Form.Field>
                   <label>Redirect URI</label>
                   <input
-                    onChange={e => this.handleChange(e.target.value, "redirectUri")}
+                    onChange={e => this.handleChange(e.target.value, "callbackUrl")}
                     placeholder='https://example.com'
-                    value={redirectUri}
+                    value={callbackUrl}
                   />
                 </Form.Field>
                 {/* <Form.Field>
@@ -143,7 +143,7 @@ export default class ExaplePage extends React.Component {
                 authCallback={this.loginHandler}
                 buttonTheme={buttonTheme}
                 className={customClassName}
-                redirectUri={redirectUri}
+                callbackUrl={callbackUrl}
                 scope={scope}
 							/>
             </Segment>

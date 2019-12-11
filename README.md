@@ -41,7 +41,7 @@ Follow these steps to start using React Twitter Login:
          clientId={CLIENT_ID}
          clientSecret={CLIENT_SECRET}
          domain={ORG_DOMAIN}
-         redirectUri={REDIRECT_URI}
+         callbackUrl={CALLBACK_URL}
          scope={SCOPE}
        />
      );
@@ -58,7 +58,7 @@ Follow these steps to start using React Twitter Login:
 | clientId     | string                                                     | required  | Client ID of your OAuth App                                                                                            |
 | clientSecret | string                                                     | required  | Client Secret of your OAuth App                                                                                        |
 | domain       | string                                                     | required  | Domain of your Twitter organization                                                                                    |
-| redirectUri  | string                                                     | required  | Authorization callback URL of your OAuth App                                                                           |
+| callbackUrl  | string                                                     | required  | Authorization callback URL of your OAuth App                                                                           |
 | scope        | string                                                     | required  | Scope that will be requested.                                                                                          |
 | buttonTheme  | enum(`"light"`, `"light_short"`, `"dark"`, `"dark_short"`) | `"light"` | Button style theme, that based on [Twitter Brand Design](https://about.twitter.com/en_us/company/brand-resources.html) |
 | className    | string                                                     | `""`      | Custom class name                                                                                                      |

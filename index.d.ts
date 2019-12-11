@@ -31,7 +31,7 @@ interface TwitterLoginProps {
   /**
    * The redirect URI of the application, this should be same as the value in the application registration portal.
    */
-  redirectUri: string;
+  callbackUrl: string;
 
   /**
    * Name of theme for button style.
