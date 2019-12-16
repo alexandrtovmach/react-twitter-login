@@ -28,11 +28,6 @@ interface TwitterLoginProps {
    */
   buttonTheme?: TwitterLoginButtonTheme;
 
-  // /**
-  //  * Enable detailed logs of authorization process.
-  //  */
-  // debug?: boolean;
-
   /**
    * Additional class name string.
    */
