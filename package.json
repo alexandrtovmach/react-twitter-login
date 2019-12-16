@@ -2,7 +2,7 @@
   "name": "react-twitter-login",
   "description": "React component for simple OAuth with Twitter",
   "main": "dist/index.js",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "author": {
     "name": "Alexandr Tovmach",
     "url": "https://alexandrtovmach.com/",
