@@ -113,16 +113,18 @@ export default class TwitterLoginComponent extends React.Component<
   };
 
   render() {
-    const { buttonTheme, className } = this.props;
+    const { buttonTheme, className, children } = this.props;
 
-    return (
-      <>
-        <TwitterLoginButton
-          buttonTheme={buttonTheme || "light"}
-          buttonClassName={className}
-          onClick={this.handleLoginClick}
-        />
-      </>
+    return children ? (
+      <div onClick={this.handleLoginClick} className={className}>
+        {children}
+      </div>
+    ) : (
+      <TwitterLoginButton
+        buttonTheme={buttonTheme || "light"}
+        buttonClassName={className}
+        onClick={this.handleLoginClick}
+      />
     );
   }
 }

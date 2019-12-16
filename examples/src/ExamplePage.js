@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Header, Label, Icon, Segment, Select, Form } from 'semantic-ui-react';
+import { Container, Header, Label, Icon, Segment, Select, Form, Radio } from 'semantic-ui-react';
 
 import config from "./config";
 import TwitterLogin from "../../dist";
@@ -10,6 +10,7 @@ export default class ExaplePage extends React.Component {
 
 		const { consumerKey, consumerSecret, themeOptions } = config;    
     this.state = {
+      customButton: false,
       consumerKey,
       consumerSecret,
       callbackUrl: config.callbackUrl || window.location.href,
@@ -33,7 +34,7 @@ export default class ExaplePage extends React.Component {
   };
 
   render() {
-    const { consumerKey, consumerSecret, buttonTheme, customClassName, callbackUrl } = this.state;
+    const { consumerKey, consumerSecret, buttonTheme, customClassName, callbackUrl, customButton } = this.state;
     return (
       <div className="viewport">
         <Segment basic>
@@ -97,19 +98,19 @@ export default class ExaplePage extends React.Component {
                   />
                 </Form.Field>
                 <Form.Field>
-                  <label>Auth callback</label>
-                  <code>
-                    {`(err, data) => console.log(err, data)`}
-                  </code>
-                </Form.Field>
-                {/* <Form.Field>
+                  <label>Custom button</label>
                   <Radio
-                    onChange={(e, data) => this.handleChange(data.checked, "debug")}
-                    label="Debug"
-                    defaultChecked={debug}
+                    onChange={(e, data) => this.handleChange(data.checked, "customButton")}
+                    label="children={<button>My button</button>}"
                     toggle
                   />
-                </Form.Field> */}
+                </Form.Field>
+                <Form.Field>
+                  <label>Auth callback</label>
+                  <code>
+                    (err, data) => console.log(err, data)
+                  </code>
+                </Form.Field>
               </Form>
             </Segment>
             <Segment>
@@ -121,6 +122,7 @@ export default class ExaplePage extends React.Component {
                 buttonTheme={buttonTheme}
                 className={customClassName}
                 callbackUrl={callbackUrl}
+                children={customButton && <button>My button</button>}
 							/>
             </Segment>
           </Container>
