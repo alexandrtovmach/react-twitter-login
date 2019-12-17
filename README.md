@@ -45,6 +45,29 @@ Follow these steps to start using React Twitter Login:
      );
    };
    ```
+   Or add custom style
+   
+   ```jsx
+   import React from "react";
+   import TwitterLogin from "react-twitter-login";
+
+   export default props => {
+     const authHandler = (err, data) => {
+       console.log(err, data);
+     };
+
+     return (
+       <TwitterLogin
+         authCallback={authHandler}
+         consumerKey={CONSUMER_KEY}
+         consumerSecret={CONSUMER_SECRET}
+         callbackUrl={CALLBACK_URL}
+       >
+         <p>Login With Twitter</p>
+       </TwitterLogin>
+     );
+   };
+   ```
 
 3. Find more info about keys and Twitter developer apps in [official docs](https://developer.twitter.com/en/docs/basics/apps/overview).
 
