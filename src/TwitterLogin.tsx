@@ -80,17 +80,23 @@ export default class TwitterLoginComponent extends React.Component<
     const requestTokenData = await obtainOauthRequestToken(
       obtainRequestTokenConfig
     );
+    
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     if (requestTokenData.oauth_callback_confirmed === "true") {
-      const popup = openWindow({
-        url: `https://api.twitter.com/oauth/authorize?oauth_token=${requestTokenData.oauth_token}`,
-        name: "Log in with Twitter"
-      });
-
-      if (popup) {
-        observeWindow({ popup, onClose: this.handleClosingPopup });
-        this.setState({
-          popup
+      if (isSafari) {
+        window.open(`https://api.twitter.com/oauth/authorize?oauth_token=${requestTokenData.oauth_token}`, '_self');
+      } else {
+        const popup = openWindow({
+          url: `https://api.twitter.com/oauth/authorize?oauth_token=${requestTokenData.oauth_token}`,
+          name: "Log in with Twitter"
         });
+
+        if (popup) {
+          observeWindow({ popup, onClose: this.handleClosingPopup });
+          this.setState({
+            popup
+          });
+        }
       }
     } else {
       this.handleError(
