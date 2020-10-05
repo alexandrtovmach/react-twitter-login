@@ -19,6 +19,13 @@ interface TwitterLoginProps {
   authCallback: (error?: any, result?: any) => void;
 
   /**
+   * DEPRECATED
+   * "callbackUrl" is not supported from version 1.2.0 and higher. It's hardcoded inside the package with "window.location.href". More details: https://github.com/alexandrtovmach/react-twitter-login/issues/8
+   * The redirect URI of the application, this should be same as the value in the application registration portal.
+   */
+  callbackUrl?: string;
+
+  /**
    * Name of theme for button style.
    */
   buttonTheme?: TwitterLoginButtonTheme;

@@ -68,7 +68,12 @@ export default class TwitterLoginComponent extends React.Component<
   };
 
   handleLoginClick = async () => {
-    const { consumerKey, consumerSecret } = this.props;
+    const { consumerKey, consumerSecret, callbackUrl } = this.props;
+    if (callbackUrl) {
+      console.warn(
+        `DEPRECATED: "callbackUrl" is not supported and ignored from version 1.2.0 and higher. It's hardcoded inside the package with "window.location.href". More details: https://github.com/alexandrtovmach/react-twitter-login/issues/8`
+      );
+    }
     const obtainRequestTokenConfig = {
       apiUrl: "https://api.twitter.com/oauth/request_token",
       callbackUrl: window.location.href,
