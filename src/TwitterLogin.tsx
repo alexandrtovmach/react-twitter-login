@@ -98,7 +98,7 @@ export default class TwitterLoginComponent extends React.Component<
       }
     } else {
       this.handleError(
-        `Callback URL "${url}" is not confirmed. Please check that is whitelisted within the Twitter app settings.`
+        `Callback URL "${window.location.href}" is not confirmed. Please check that is whitelisted within the Twitter app settings.`
       );
     }
   };
