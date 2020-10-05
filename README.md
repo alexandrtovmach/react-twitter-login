@@ -26,11 +26,13 @@ Follow these steps to start using React Twitter Login:
 
 2. Import and configure component.
 
+   > This component should be rendered on route that match with one of whitelisted [callback URLs](https://developer.twitter.com/en/docs/basics/apps/guides/callback-urls) of your Twitter app.
+
    ```jsx
    import React from "react";
    import TwitterLogin from "react-twitter-login";
 
-   export default props => {
+   export default (props) => {
      const authHandler = (err, data) => {
        console.log(err, data);
      };
@@ -40,7 +42,6 @@ Follow these steps to start using React Twitter Login:
          authCallback={authHandler}
          consumerKey={CONSUMER_KEY}
          consumerSecret={CONSUMER_SECRET}
-         callbackUrl={CALLBACK_URL}
        />
      );
    };
@@ -55,7 +56,6 @@ Follow these steps to start using React Twitter Login:
 | authCallback   | function                                                   | required  | Callback function which takes two arguments `(error, authData)`                                                        |
 | consumerKey    | string                                                     | required  | Consumer API Key of your Twitter developer app (not Access Token)                                                      |
 | consumerSecret | string                                                     | required  | Consumer API Secret of your Twitter developer app (not Access Token Secret)                                            |
-| callbackUrl    | string                                                     | required  | Whitelisted [callback URL](https://developer.twitter.com/en/docs/basics/apps/guides/callback-urls) of your Twitter app |
 | buttonTheme    | enum(`"light"`, `"light_short"`, `"dark"`, `"dark_short"`) | `"light"` | Button style theme, that based on [Twitter Brand Design](https://about.twitter.com/en_us/company/brand-resources.html) |
 | className      | string                                                     | `""`      | Custom class name                                                                                                      |
 | children       | React.Component                                            | `""`      | Provide any component as a "children" prop to use custom button                                                        |
