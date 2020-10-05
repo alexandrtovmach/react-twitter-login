@@ -13,7 +13,6 @@ export default class ExaplePage extends React.Component {
       customButton: false,
       consumerKey,
       consumerSecret,
-      callbackUrl: config.callbackUrl || window.location.href,
 			customClassName: config.customClassName,
       buttonTheme: themeOptions[0].value
     };
@@ -34,7 +33,7 @@ export default class ExaplePage extends React.Component {
   };
 
   render() {
-    const { consumerKey, consumerSecret, buttonTheme, customClassName, callbackUrl, customButton } = this.state;
+    const { consumerKey, consumerSecret, buttonTheme, customClassName, customButton } = this.state;
     return (
       <div className="viewport">
         <Segment basic>
@@ -68,14 +67,6 @@ export default class ExaplePage extends React.Component {
                     onChange={e => this.handleChange(e.target.value, "consumerSecret")}
                     placeholder={config.consumerSecret}
                     value={consumerSecret}
-                  />
-                </Form.Field>
-                <Form.Field>
-                  <label>Redirect URI</label>
-                  <input
-                    onChange={e => this.handleChange(e.target.value, "callbackUrl")}
-                    placeholder='https://example.com'
-                    value={callbackUrl}
                   />
                 </Form.Field>
                 <Form.Field>
@@ -121,7 +112,6 @@ export default class ExaplePage extends React.Component {
                 authCallback={this.loginHandler}
                 buttonTheme={buttonTheme}
                 className={customClassName}
-                callbackUrl={callbackUrl}
                 children={customButton && <button>My button</button>}
 							/>
             </Segment>

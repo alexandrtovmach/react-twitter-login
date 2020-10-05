@@ -19,11 +19,6 @@ interface TwitterLoginProps {
   authCallback: (error?: any, result?: any) => void;
 
   /**
-   * The redirect URI of the application, this should be same as the value in the application registration portal.
-   */
-  callbackUrl: string;
-
-  /**
    * Name of theme for button style.
    */
   buttonTheme?: TwitterLoginButtonTheme;
