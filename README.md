@@ -4,7 +4,7 @@
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-twitter-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
 [![npm](https://img.shields.io/npm/dt/react-twitter-login?cacheSeconds=1800)](https://www.npmjs.com/package/react-twitter-login)
 
-React component for a simple OAuth login with Twitter.
+React component for a simple OAuth login with Twitter. This package NOT FOR PRODUCTION, because it's require to keep `CONSUMER_KEY` and `CONSUMER_SECRET` on client side, which are huge security risk. Use this package for MVP or quick prototype only. If you looking for some production solution, please use server side authorization like [passport-twitter](http://www.passportjs.org/packages/passport-twitter/).
 
 [DEMO HERE](https://alexandrtovmach.github.io/react-twitter-login/)
 
