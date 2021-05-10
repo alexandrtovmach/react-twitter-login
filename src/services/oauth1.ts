@@ -32,7 +32,7 @@ export const obtainOauthRequestToken = async ({
     consumerKey,
     consumerSecret
   });
-  const res = await fetch(`https://cors-anywhere.herokuapp.com/${apiUrl}`, {
+  const res = await fetch(`https://cors.bridged.cc/${apiUrl}`, {
     method,
     headers: {
       Authorization: `OAuth ${oauthSignature}`
@@ -65,7 +65,7 @@ export const obtainOauthAccessToken = async ({
     oauthToken,
     oauthVerifier
   });
-  const res = await fetch(`https://cors-anywhere.herokuapp.com/${apiUrl}`, {
+  const res = await fetch(`https://cors.bridged.cc/${apiUrl}`, {
     method,
     headers: {
       Authorization: `OAuth ${oauthSignature}`
