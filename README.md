@@ -8,7 +8,7 @@ React component for a simple OAuth login with Twitter. This package NOT FOR PROD
 
 [DEMO HERE](https://alexandrtovmach.github.io/react-twitter-login/)
 
-> SECURITY NOTE: This package using third-party proxy [cors.bridged.cc](https://app.cors.bridged.cc/), to resolve CORS policy protection on requests from your custom domain to api.twitter.com. If it's not work for you for some security concerns, we recommend to use server side authorization like [passport-twitter](http://www.passportjs.org/packages/passport-twitter/) or other.
+> SECURITY NOTE: This package using third-party proxy [cors.bridged.cc](https://app.cors.bridged.cc/), to resolve CORS policy protection on requests from your custom domain to api.twitter.com. If it's not working for you for some security concerns, we recommend to use server side authorization like [passport-twitter](http://www.passportjs.org/packages/passport-twitter/) or other.
 
 ![image](https://user-images.githubusercontent.com/28801003/70518342-dc895280-1b42-11ea-905a-eed1bdf63694.png)
 
